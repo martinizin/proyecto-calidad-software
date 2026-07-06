@@ -25,6 +25,11 @@ Después del refactor
   
 <img width="1896" height="770" alt="image" src="https://github.com/user-attachments/assets/2a170d56-1512-41ef-bf90-698b76173ed6" />
 
+- HISTORIAL DE COMMITS
+  
+<img width="1896" height="1078" alt="image" src="https://github.com/user-attachments/assets/8dfb887d-d544-4b92-a80e-2cedb5693b39" />
+
+
 - CONTROL DE VERSIONES
 
 <img width="1043" height="671" alt="image" src="https://github.com/user-attachments/assets/8f16b51a-12a4-4eaa-bdc2-054c5f1d33aa" />
