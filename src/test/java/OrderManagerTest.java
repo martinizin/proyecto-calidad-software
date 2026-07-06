@@ -13,7 +13,7 @@ class OrderManagerTest {
 
         try {
             System.setOut(new PrintStream(output, true));
-            OrderManager.main(new String[0]);
+            App.main(new String[0]);
         } finally {
             System.setOut(originalOut);
         }
