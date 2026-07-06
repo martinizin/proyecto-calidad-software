@@ -1,26 +1,26 @@
-import java.util.ArrayList;
-import java.util.List;
+import interfaces.OrderNotifier;
+import interfaces.OrderRepository;
+import models.Order;
 
 public class OrderManager {
-    private List customers = new ArrayList<>();
-    private List orders = new ArrayList<>();
+    private final OrderRepository repository;
+    private final OrderNotifier notifier;
 
-    public void addOrder(String customer, String order) {
-        customers.add(customer);
-        orders.add(order);
-        System.out.println("Order added for " + customer);
+    public OrderManager(OrderRepository repository, OrderNotifier notifier) {
+        this.repository = repository;
+        this.notifier = notifier;
+    }
+
+    public void addOrder(String customerName, String product) {
+        Order order = new Order(customerName, product);
+        repository.save(order);
+        notifier.notify(order);
     }
 
     public void listOrders() {
-        for (int i = 0; i < orders.size(); i++) {
-            System.out.println("Customer: " + customers.get(i) + ", Order: " + orders.get(i));
-        }
-    }
-
-    public static void main(String[] args) {
-        OrderManager om = new OrderManager();
-        om.addOrder("Alice", "Laptop");
-        om.addOrder("Bob", "Phone");
-        om.listOrders();
+        repository.findAll().forEach(order ->
+            System.out.println("Customer: " + order.getCustomerName() +
+                               ", Order: " + order.getProduct())
+        );
     }
 }
