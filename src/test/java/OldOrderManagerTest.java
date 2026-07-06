@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.jupiter.api.Test;
 
-class OrderManagerTest {
+class OldOrderManagerTest {
 
     @Test
     void mainPrintsExpectedOrders() {
@@ -13,7 +13,7 @@ class OrderManagerTest {
 
         try {
             System.setOut(new PrintStream(output, true));
-            App.main(new String[0]);
+            OldOrderManager.main(new String[0]);
         } finally {
             System.setOut(originalOut);
         }
